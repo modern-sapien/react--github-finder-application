@@ -1,30 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 
 // props are properties you can pass into components from outside.
-class Navbar extends Component {
-// default props for when there is no content being passed through App.js
-    static defaultProps = {
-        title: "Github Finder",
-        icon: "fab fa-github"
-    }
-
-// Validation for inputs of props
-    static propTypes = {
-        title: PropTypes.string.isRequired,
-        icon: PropTypes.string.isRequired
-    }
-    render() {
-
+const Navbar = ({ icon, title}) => {
     return (
       <nav className="navbar bg-primary">
         <h1>
           {/* access the property of icon & title set on Navbar in App.js */}
-          <i className={this.props.icon}></i> {this.props.title}
+          <i className={icon}></i> {title}
         </h1>
       </nav>
     );
-  }
+
+}
+
+// default props for when there is no content being passed through App.js
+Navbar.defaultProps = {
+  title: "Github Finder",
+  icon: "fab fa-github"
+}
+
+// Validation for inputs of props
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired
 }
 
 export default Navbar;

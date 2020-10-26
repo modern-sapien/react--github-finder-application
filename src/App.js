@@ -13,7 +13,10 @@ class App extends Component {
       <div className="App">
         {/* could pass in props here, but defaults are set in Navbar.js */}
         <Navbar />
+      <div className="container">
         <Users />
+      </div>
+        
       </div>
       
     );

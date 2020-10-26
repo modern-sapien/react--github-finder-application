@@ -27,12 +27,12 @@ class Users extends Component {
 
     render() {
         return (
-            <div>
+            <div style={userStyle}>
                 {/* looking through the users in a state for each one*/}
                 {this.state.users.map(user => (
                     // Each child in a list should have a unique "key" prop
                     // passing in the user object from users to UserItem
-                    // we also created a "user" prop that we passing our array of objects through
+                    // we also created a "user" prop that we are passing our array of objects through
                     <UserItem key={user.id} user={user}  />
                 ))}
             </div>
@@ -40,4 +40,9 @@ class Users extends Component {
     }
 }
 
+const userStyle = {
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gridGap: "1rem"
+}
 export default Users
