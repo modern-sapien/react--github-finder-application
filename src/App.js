@@ -1,24 +1,21 @@
 // global style sheet
 import React, { Component } from "react";
-// importing layout of Navbar.js
-import Navbar from "./components/layout/Navbar"
-import Users from "./components/users/Users"
-
-import './App.css'; 
-// renders app in "reactDOM render area targetting "root"
+import "./App.css";
 
 class App extends Component {
-    render()  {
+  //method as part of a class
+  hello = () => "this.hello()"
+
+  render()  {
+      const name = "John Doe";
+      const goodbye = () => "goodbye()"
+
     return (
       <div className="App">
-        {/* could pass in props here, but defaults are set in Navbar.js */}
-        <Navbar />
-      <div className="container">
-        <Users />
+        <h2>{name}</h2>
+        <h1>{this.hello()}</h1>
+        <h2>{goodbye()}</h2>
       </div>
-        
-      </div>
-      
     );
     }
 
