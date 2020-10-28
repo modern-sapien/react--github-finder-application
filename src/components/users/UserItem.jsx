@@ -1,9 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types"
 
 // UserItem is equal to a call back function with the properties of User passed from User
 // These are then destructured in the callback function to be called in the return of UserItem
 const UserItem = ({user: {login, avatar_url, htm_url}}) => {
-
     return (
       <div className="card text-center">
         <img
@@ -21,5 +21,10 @@ const UserItem = ({user: {login, avatar_url, htm_url}}) => {
       </div>
     );
 };
+
+UserItem.propTypes ={
+    // ptor // ptar
+    user: PropTypes.object.isRequired,
+}
 
 export default UserItem;
