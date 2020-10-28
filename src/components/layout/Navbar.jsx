@@ -6,6 +6,11 @@ export default class Navbar extends Component {
         title: "Github Loser",
         icon: "fab fa-github"
     }
+
+    static propTypes ={
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired
+    }
     
     render() {
         return (
