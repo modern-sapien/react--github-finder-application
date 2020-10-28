@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-class UserItem extends Component {
-  render() {
-      // access to props inherited from Users.jsx
-      const {login, avatar_url, htm_url} = this.props.user
+// UserItem is equal to a call back function with the properties of User passed from User
+// These are then destructured in the callback function to be called in the return of UserItem
+const UserItem = ({user: {login, avatar_url, htm_url}}) => {
+
     return (
       <div className="card text-center">
         <img
@@ -20,7 +20,6 @@ class UserItem extends Component {
         </div>
       </div>
     );
-  }
-}
+};
 
 export default UserItem;
